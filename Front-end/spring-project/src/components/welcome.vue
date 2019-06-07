@@ -1,30 +1,21 @@
 <template>
-  <div id="app">
-   <!-- <transition name="tit_animation">
-      <div class="_title">欢迎来到这个管理系统</div>
-   </transition>   -->
-   <Login></Login>
-   
-  </div>
+    <div class="welcome">
+        <div class="_title">欢迎来到这个管理系统</div>
+    </div>
 </template>
 
 <script>
-import Login from "./components/login.vue"
-
 export default {
-  name: 'app',
-  components:{
-    Login
-  }
+    
 }
 </script>
 
-<style>
-/* *{
+<style scoped>
+    *{
   margin:0;
   padding:0;
 }
-#app {
+#welcome {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -53,10 +44,11 @@ body{
     text-align: center;
 
     
-    top:-62px;
+    /* top:-62px;
     
     
     transform: translateY(400%);
-    transition: all 1s ease-in; 
-} */
+    transition: all 1s ease-in; */
+}
 </style>
+
