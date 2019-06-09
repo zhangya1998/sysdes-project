@@ -23,10 +23,10 @@ export default {
             
             //将表单信息发送到 '/login' 成功执行then 失败执行catch
             axios.post('/login',data).then((response)=>{         
-                console.log(response);
+                window.console.log(response);
                 //this.$router.push('/sysIndex'); 页面跳转
             }).catch((response)=>{
-                console.log(response);
+                window.console.log(response);
             })
         }
     }

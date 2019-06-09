@@ -6,6 +6,7 @@ import Welcome from './page/welcome.vue'
 import sysIndex from "./page/sysIndex.vue"
 import ERROR from './page/404_ERROR.vue'
 
+
 Vue.use(Router)
 
 export default new Router({
