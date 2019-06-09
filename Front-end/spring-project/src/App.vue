@@ -1,41 +1,23 @@
 <template>
   <div id="app">
-   <!-- <transition name="tit_animation">
-      <div class="_title">欢迎来到这个管理系统</div>
-   </transition>   -->
-   <Login></Login>
-   
+    <router-view/>
   </div>
 </template>
 
 <script>
-import Login from "./components/login.vue"
 
 export default {
   name: 'app',
   components:{
-    Login
+    
   }
 }
 </script>
 
 <style>
-/* *{
+*{
   margin:0;
   padding:0;
-}
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-
-  width:100%;
-  height:100%;
-  background-image: url("./assets/img/bg_main.jpg");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
 }
 html{
   height: 100%;
@@ -43,20 +25,8 @@ html{
 body{
   height: 100%;
 }
-._title{
-    width:100%;
-
-    font-size:60px;
-    color:white;
-    letter-spacing:4px;
-    font-family:'Times New Roman', Times, serif;
-    text-align: center;
-
-    
-    top:-62px;
-    
-    
-    transform: translateY(400%);
-    transition: all 1s ease-in; 
-} */
+#app{
+  width:100%;
+  height:100%;
+}
 </style>

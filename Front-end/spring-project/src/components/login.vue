@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="wrapper">
         <h1>this is login.vue</h1>
         用户名：<input type="text" v-model="username"/>{{ username }}
         密码： <input type="password" v-model="password"/>{{ password }}
@@ -20,8 +20,11 @@ export default {
         login(){
             //alert("this is login method");
             let data = {'username':this.username,'password':this.password};
-            axios.post('/login',data).then((response)=>{
+            
+            //将表单信息发送到 '/login' 成功执行then 失败执行catch
+            axios.post('/login',data).then((response)=>{         
                 console.log(response);
+                //this.$router.push('/sysIndex'); 页面跳转
             }).catch((response)=>{
                 console.log(response);
             })
@@ -31,5 +34,7 @@ export default {
 </script>
 
 <style scoped>
-
+    #wrapper{
+        background-color: #fff;
+    }
 </style>

@@ -1,21 +1,26 @@
 <template>
     <div class="welcome">
         <div class="_title">欢迎来到这个管理系统</div>
+        <h1>this is welcome</h1>
+        <Login></Login>
     </div>
 </template>
 
 <script>
+import Login from './login.vue'
 export default {
-    
+    components:{
+      Login
+    }
 }
 </script>
 
 <style scoped>
-    *{
+*{
   margin:0;
   padding:0;
 }
-#welcome {
+.welcome {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -24,21 +29,15 @@ export default {
 
   width:100%;
   height:100%;
-  background-image: url("./assets/img/bg_main.jpg");
+  background-image: url('../assets/img/bg_main.jpg');
   background-size: 100% 100%;
   background-repeat: no-repeat;
-}
-html{
-  height: 100%;
-}
-body{
-  height: 100%;
 }
 ._title{
     width:100%;
 
     font-size:60px;
-    color:white;
+    color:black;
     letter-spacing:4px;
     font-family:'Times New Roman', Times, serif;
     text-align: center;
