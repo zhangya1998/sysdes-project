@@ -1,13 +1,12 @@
 <template>
     <div class="welcome">
         <div class="_title">欢迎来到这个管理系统</div>
-        <h1>this is welcome</h1>
         <Login></Login>
     </div>
 </template>
 
 <script>
-import Login from './login.vue'
+import Login from '../components/login.vue'
 export default {
     components:{
       Login
