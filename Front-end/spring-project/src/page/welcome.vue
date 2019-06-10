@@ -2,6 +2,7 @@
     <div class="welcome">
         <div class="_title">欢迎来到这个管理系统</div>
         <Login></Login>
+        <router-link to="/sysIndex" style="background:white;">去主页 测试用</router-link>
     </div>
 </template>
 
