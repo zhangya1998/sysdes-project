@@ -3,10 +3,10 @@
         <h1>this is sysIndex</h1>
             <el-row>
                 <el-col :span="6">
-                    <side-bar></side-bar>  
+                    <side-bar @isWho="setWho"></side-bar>  
                 </el-col>
             <el-col :span="18">
-                <components-show></components-show>
+                <components-show :_who="who"></components-show>
             </el-col>
         </el-row>
         
@@ -22,7 +22,8 @@ export default {
         return{
             componentsArr:{
 
-            }
+            },
+            who:''
         }
     },
     methods: {
@@ -31,7 +32,11 @@ export default {
       },
       handleClose(key, keyPath) {
         window.console.log(key, keyPath);
+      },
+      setWho(data){
+          this.who = data;
       }
+
     },
     components:{
         sideBar,
