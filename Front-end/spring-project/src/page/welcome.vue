@@ -1,6 +1,6 @@
 <template>
     <div class="welcome">
-        <div class="_title">欢迎来到这个管理系统</div>
+        <div class="_title">欢迎来到这个管理系统{{author}}</div>
         <Login></Login>
         <router-link to="/sysIndex" style="background:white;">去主页 测试用</router-link>
     </div>
@@ -11,6 +11,11 @@ import Login from '../components/login.vue'
 export default {
     components:{
       Login
+    },
+    computed:{
+      author(){
+        return this.$store.state.author
+      }
     }
 }
 </script>

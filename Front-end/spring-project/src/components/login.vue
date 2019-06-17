@@ -1,34 +1,50 @@
 <template>
     <div id="wrapper">
         <h1>this is login.vue</h1>
-        用户名：<input type="text" v-model="username"/>{{ username }}
-        密码： <input type="password" v-model="password"/>{{ password }}
+        用户名：<input type="text" v-model="user.number"/>
+        密码： <input type="password" v-model="user.password"/>
         <button v-on:click="login">登录</button>
+        
     </div>
 </template>
 
 <script>
-import axios from 'axios'
+import axios from 'axios';
+import { Message } from "element-ui";
 export default {
     data(){
         return {
-            username :"",
-            password :""
+            user:{
+                number:"",
+                password:""
+            }
+            
         }
     },
     methods:{
-        login(){
-            //alert("this is login method");
-            let data = {'username':this.username,'password':this.password};
-            
-            //将表单信息发送到 '/login' 成功执行then 失败执行catch
-            axios.post('/login',data).then((response)=>{         
-                window.console.log(response);
-                //this.$router.push('/sysIndex'); 页面跳转
-            }).catch((response)=>{
-                window.console.log(response);
-            })
-        }
+            login() {
+                window.console.log(this.user.number == "" || this.user.password == "");
+                if (this.user.number == "" || this.user.password == "") {
+                    Message.warning("用户名和密码不能为空");
+                    return;
+                }
+                axios.post("/login", this.user).then(response => {
+                    window.console.log(this.user.id);
+                    let token = response.headers["token"];
+                    let role = response.headers["role"];
+                    let id = response.headers["id"];
+                    if (token != null) {
+                        sessionStorage.setItem("token", token);
+                        sessionStorage.setItem("role", role);
+                        sessionStorage.setItem("id", id);
+                        this.$router.push('/sysIndex');
+                    }
+                })
+                .catch((response)=>{
+                    Message.warning("用户名或密码错误");
+                    window.console.log(response);
+                });
+            }
     }
 }
 </script>

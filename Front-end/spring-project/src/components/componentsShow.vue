@@ -5,22 +5,22 @@
 </template>
 
 <script>
-import GLOBAL from '../api/global_variable.js'
+
 
 export default {
     data(){
         return {
-            // who:'_wh'
+            
         }
     },
     components:{
-        IM:require(GLOBAL.compImportUrl+"informationManagement.vue").default,
-        IS:require(GLOBAL.compImportUrl+"informationSettings.vue").default,
-        AM:require(GLOBAL.compImportUrl+"authorityManagement.vue").default,
-        IpeM:require(GLOBAL.compImportUrl+"inspectionManagement.vue").default,
-        IpeIB:require(GLOBAL.compImportUrl+"inspectionInformationBrowing.vue").default,
-        TM:require(GLOBAL.compImportUrl+"taskManagement.vue").default,
-        TIB:require(GLOBAL.compImportUrl+"taskInformationBrowing.vue").default
+        IM:require("./inComponentsShow/"+"informationManagement.vue").default,
+        IS:require("./inComponentsShow/"+"informationSettings.vue").default,
+        AM:require("./inComponentsShow/"+"authorityManagement.vue").default,
+        IpeM:require("./inComponentsShow/"+"inspectionManagement.vue").default,
+        IpeIB:require("./inComponentsShow/"+"inspectionInformationBrowing.vue").default,
+        TM:require("./inComponentsShow/"+"taskManagement.vue").default,
+        TIB:require("./inComponentsShow/"+"taskInformationBrowing.vue").default
     },
     props:['_who']
 }
@@ -28,8 +28,8 @@ export default {
 
 <style scoped>
 #view{
-        background: red;
         width:100%;
-        height:500px;
+        height:100%;
+        border:1px solid black;
     }
 </style>
